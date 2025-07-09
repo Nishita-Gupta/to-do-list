@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ece4c8 0%, #e3b6a9 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 60px 20px;
+  color: #333;
+}
+
+.container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.flash-message {
+  background-color: #d1f7c4;
+  color: #226c1c;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+form[action="/add"] {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+form[action="/add"] input[type="text"] {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+form[action="/add"] input[type="text"]:focus {
+  border-color: #fda085;
+}
+
+form[action="/add"] button {
+  background-color: #fda085;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form[action="/add"] button:hover {
+  background-color: #f67280;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #f9f9f9;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
+}
+
+li:hover {
+  background: #fff7f2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.edit-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-form input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.edit-form .completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+button {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+}
+
+button[type="submit"] {
+  background-color: #a0c4ff;
+  color: #1e3a8a;
+}
+
+button.delete {
+  background-color: #ffc6c6;
+  color: #b91c1c;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ffb347;
+  cursor: pointer;
+}

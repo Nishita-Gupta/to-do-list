@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+
+    <form action="/add" method="POST">
+      <input type="text" name="task" placeholder="Enter Task" required />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul>
+      <% if (Array.isArray(todos)) { %>
+        <% todos.forEach(todo => { %>
+          <li>
+            <form action="/toggle/<%= todo.id %>" method="POST">
+                <input type="checkbox" name="completed" onchange="this.form.submit()" <%= todo.completed ? 'checked' : '' %> />
+            </form>
+            <form action="/edit/<%= todo.id %>" method="POST" class="edit-form">
+              <input type="text" name="updatedTask" value="<%= todo.task %>" />
+              <button type="submit">Update</button>
+            </form>
+            <form action="/delete/<%= todo.id %>" method="POST">
+              <button type="submit" class="delete">Delete</button>
+            </form>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <p>No tasks found.</p>
+      <% } %>
+    </ul>
+
+  </div>
+</body>
+</html>
