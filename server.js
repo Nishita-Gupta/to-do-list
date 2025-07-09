@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
@@ -9,7 +10,7 @@ const PORT = 3000;
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'HN15',
+    password: process.env.DB_PASSWORD,
     database: 'todo_list'
 });
 
